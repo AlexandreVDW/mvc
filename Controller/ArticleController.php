@@ -32,10 +32,19 @@ class ArticleController
         $articles = [];
         foreach ($rawArticles as $rawArticle) {
             // We are converting an article from a "dumb" array to a much more flexible class
-            $articles[] = new Article($rawArticle['id'],$rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date']);
+            $articles[] = new Article($rawArticle['id'],$rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date'], $rawArticle['id_author']);
         }
 
         return $articles;
+    }
+
+    private function getAuthorName($authorId)
+    {
+        $stmt = $this->dbManager->getPdo()->prepare("SELECT author FROM author WHERE id = :id");
+        $stmt->execute([':id' => $authorId]);
+        $authorName = $stmt->fetchColumn();
+
+        return $authorName;
     }
 
     public function show($id)
@@ -58,7 +67,7 @@ class ArticleController
     }
 
     // Convert the raw article into an Article object
-    $article = new Article($rawArticle['id'], $rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date']);
+    $article = new Article($rawArticle['id'], $rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date'], $rawArticle['id_author']);
 
     // Fetch the previous and next article IDs
     $previousStmt = $this->dbManager->getPdo()->prepare("SELECT id FROM articles WHERE id < :id ORDER BY id DESC LIMIT 1");

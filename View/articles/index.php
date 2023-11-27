@@ -9,6 +9,7 @@
                     <?= $article->title ?>
                 </a> 
                 (<?= $article->formatPublishDate() ?>)
+                by <?= $this->getAuthorName($article->authorId) ?>
             </li>
         <?php endforeach; ?>
     </ul>
