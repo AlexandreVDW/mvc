@@ -6,7 +6,7 @@
     <h1><?= $article->title ?></h1>
     <p><?= $article->formatPublishDate() ?></p>
     <p><?= $article->description ?></p>
-    <p>by: <?= $this->getAuthorName($article->authorId) ?></p>
+    <p>by: <a href="index.php?page=authors-show&id=<?= $article->authorId ?>"><?= $this->getAuthorName($article->authorId) ?></a></p>
 
     <?php // TODO: links to next and previous ?>
     <?php if ($previousArticleId): ?>
