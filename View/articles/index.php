@@ -9,7 +9,7 @@
                     <?= $article->title ?>
                 </a> 
                 (<?= $article->formatPublishDate() ?>)
-                by <?= $this->getAuthorName($article->authorId) ?>
+                by: <a href="index.php?page=authors-show&id=<?= $article->authorId ?>"><?= $this->getAuthorName($article->authorId) ?></a>
             </li>
         <?php endforeach; ?>
     </ul>

@@ -3,10 +3,9 @@
 <?php // Use any data loaded in the controller here ?>
 
 <section>
-    <p><a href="index.php?page=articles">To articles page</a></p>
-    <p><a href="index.php?page=authors">To author page</a></p>
-
-    <!-- <p>Put your content here.</p> -->
+    <h1>This is a mvc projetc :</h1>
+    <p>I think it can give you AVC and </p>
+    <p>Big mental issues</p>
 </section>
 
 <?php require 'View/includes/footer.php'?>
