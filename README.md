@@ -14,9 +14,10 @@ The second folder takes the basic MVC project a step further by incorporating na
 
 The third folder introduces an Object-Oriented Programming (OOP) router to the MVC project. This allows for more efficient routing and better organization of the code.
 
-Please navigate through the folders to understand the progression and the different implementations of the MVC project.
+Actually is delete because it refuse to work and i need to work more on it
 
 ## Why multiple folders?
 
 The reason for having multiple folders is to show the progression of the project. This allows for a better understanding of the MVC project and how it can be implemented in different ways.
 
+Please navigate through the folders to understand the progression and the different implementations of the MVC project.
